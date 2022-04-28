@@ -1,0 +1,18 @@
+server:  
+  port: 8057
+
+spring:
+  application:
+    name: contactsclient
+
+eureka:  
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+microservicio:
+  contact:
+    name: api-gateway
+    findAllUrl: http://${microservicio.contact.name}/contacts
+    saveUrl: http://${microservicio.contact.name}/contacts
+    deleteUrl: http://${microservicio.contact.name}/contacts/{id}
